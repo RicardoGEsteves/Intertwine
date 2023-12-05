@@ -1,4 +1,4 @@
-# Intertwined
+# Intertwine
 
 `This is an instant messaging and VoIP social platform which allows communication through voice calls, video calls, text messaging, and media and files. Communication can be private or take place in virtual communities called "servers".`
 
