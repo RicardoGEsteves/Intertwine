@@ -1,3 +1,4 @@
+import { ModeToggle } from "@/components/mode-toggle";
 import { UserButton } from "@clerk/nextjs";
 
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
@@ -5,6 +6,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
     <div className="h-full">
       {children}
       <UserButton afterSignOutUrl="/" />
+      <ModeToggle />
     </div>
   );
 };
