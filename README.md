@@ -4,7 +4,45 @@
 
 ## Tech Stack
 
-> React, Next.js, TypeScript, TailwindCSS, Shadcn-iu, Socket.io, Clerk,
+> React, Next.js, TypeScript, TailwindCSS, Shadcn-iu, Socket.io, Clerk, Prisma, PostgreSQL, Supabase, LiveKit, Tanstack/react-query, Uploadthing/react, Axios, Socket.io, Zod, Zustand
+
+#### Install packages
+
+```bash
+npm install
+```
+
+#### Setup .env file
+
+```bash
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=
+NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=
+NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=
+
+
+DATABASE_URL=
+
+UPLOADTHING_SECRET=
+UPLOADTHING_APP_ID=
+
+LIVEKIT_API_KEY=
+LIVEKIT_API_SECRET=
+NEXT_PUBLIC_LIVEKIT_URL=
+```
+
+#### Setup Prisma
+
+```bash
+npx prisma init
+npx prisma generate
+npx prisma db push
+
+npm i @prisma/client
+npx prisma studio
+```
 
 #### Getting Started
 
