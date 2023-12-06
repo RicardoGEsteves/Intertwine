@@ -21,9 +21,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
-        {/* redefine color preset in case you what a custom color scheme
-        <body className={cn(font.className), "bg-white dark:bg-[#232426]"}> */}
-        <body className={cn(font.className)}>
+        <body className={cn("min-h-screen bg-background", font.className)}>
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
