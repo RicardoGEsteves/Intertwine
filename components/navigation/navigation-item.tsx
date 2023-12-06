@@ -41,7 +41,7 @@ const NavigationItem = ({ id, imageUrl, name }: NavigationItemProps) => {
             className={cn(
               "relative group flex my-2  h-full w-full rounded-[24px] group-hover:rounded-[16px] transition-all overflow-hidden",
               params?.serverId === id &&
-                "bg-primary/10 text-primary rounded-[16px]"
+                "bg-primary/5 text-primary rounded-[16px]"
             )}
           >
             <Image fill src={imageUrl} alt="Server Image" />
