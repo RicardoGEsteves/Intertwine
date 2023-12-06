@@ -4,7 +4,7 @@
 
 ## Tech Stack
 
-> React, Next.js, TypeScript, TailwindCSS, Shadcn-iu, Socket.io, Clerk, Prisma, PostgreSQL, Supabase, LiveKit, Tanstack/react-query, Uploadthing/react, Axios, Socket.io, Zod, Zustand
+> React, Next.js, TypeScript, TailwindCSS, Shadcn-iu, Socket.io, Clerk, Prisma, PostgreSQL, Supabase, LiveKit, Tanstack/react-query, Uploadthing/react, Axios, Zod, Zustand
 
 #### Install packages
 
