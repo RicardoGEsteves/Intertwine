@@ -4,12 +4,15 @@ import { Plus } from "lucide-react";
 import { Button } from "../ui/button";
 
 import ActionTooltip from "../action-tooltip";
+import { useModal } from "@/hooks/use-modal-store";
 
 const NavigationAction = () => {
+  const { onOpen } = useModal();
   return (
     <>
       <ActionTooltip side="right" align="center" label="Create Server">
         <Button
+          onClick={() => onOpen("createServer")}
           variant="outline"
           size="icon"
           className="flex mx-3 rounded-full overflow-hidden"

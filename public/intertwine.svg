@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Background -->
+  <circle cx="100" cy="100" r="95" fill="#030712" />
+  
+  <!-- Outer Circle -->
+  <circle cx="100" cy="100" r="90" fill="none" stroke="#f9fafb" stroke-width="5" />
+  
+  <!-- Triangles -->
+  <polygon points="100,30 50,150 150,150" fill="#f9fafb" />
+  <polygon points="100,170 150,50 50,50" fill="#84cc16" />
+  <polygon points="30,100 170,100 100,20" fill="#f9fafb" />
+  <polygon points="30,100 100,180 170,100" fill="#84cc16" />
+</svg>
