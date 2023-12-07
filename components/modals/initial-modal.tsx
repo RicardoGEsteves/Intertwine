@@ -76,12 +76,12 @@ const InitialModal = () => {
 
   return (
     <Dialog open>
-      <DialogContent className="bg-white text-black p-0 overflow-hidden">
+      <DialogContent className="bg-secondary text-primary p-0 overflow-hidden">
         <DialogHeader className="pt-8 px-6">
           <DialogTitle className="text-2xl text-center font-bold">
             Server customization
           </DialogTitle>
-          <DialogDescription className="text-center text-gray-500">
+          <DialogDescription className="text-center text-gray-500 dark:text-gray-400">
             Customize your server channel effortlessly with our versatile
             features. Tailor permissions, adjust settings, and personalize the
             channel to suit your community&apos;s unique needs. From setting
@@ -117,14 +117,14 @@ const InitialModal = () => {
                 name="name"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="uppercase text-xs font-bold text-gray-500 dark:text-secondary/70">
+                    <FormLabel className="uppercase text-xs font-bold text-gray-500 dark:text-secondary-foreground/70">
                       Server name
                     </FormLabel>
                     <FormControl>
                       <Input
                         {...field}
                         placeholder="Enter a server name"
-                        className="bg-gray-300/50 border-0 focus-visible:ring-0 text-black focus-visible:ring-offset-0"
+                        className="bg-gray-300/50 dark:bg-secondary-foreground/50 border-0 focus-visible:ring-0 text-primary focus-visible:ring-offset-0 dark:placeholder:text-secondary-foreground/50"
                         disabled={isLoading}
                       />
                     </FormControl>
@@ -133,7 +133,7 @@ const InitialModal = () => {
                 )}
               />
             </div>
-            <DialogFooter className="bg-gray-100 px-6 py-4">
+            <DialogFooter className="bg-gray-100 dark:bg-primary-foreground/30 px-6 py-4">
               <Button disabled={isLoading}>Create</Button>
             </DialogFooter>
           </form>
