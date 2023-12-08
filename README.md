@@ -51,6 +51,19 @@ Create a new project on [Supabase](https://supabase.io/)
 - Add your Supabase URL to the .env file
 - Add your Supabase public key to the .env file
 
+#### Setup Clerk
+
+Create a new project on [Clerk](https://clerk.dev/)
+Create a new user pool on [Clerk](https://clerk.dev/)
+Create a new user on [Clerk](https://clerk.dev/)
+
+- Add your Clerk public key to the .env file
+- Add your Clerk secret key to the .env file
+- Add your Clerk sign in URL to the .env file
+- Add your Clerk sign up URL to the .env file
+- Add your Clerk after sign in URL to the .env file
+- Add your Clerk after sign up URL to the .env file
+
 #### Getting Started
 
 First, run the development server:
