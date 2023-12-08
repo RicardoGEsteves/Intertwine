@@ -44,6 +44,13 @@ npm i @prisma/client
 npx prisma studio
 ```
 
+#### Setup Supabase
+
+Create a new project on [Supabase](https://supabase.io/)
+
+- Add your Supabase URL to the .env file
+- Add your Supabase public key to the .env file
+
 #### Getting Started
 
 First, run the development server:
