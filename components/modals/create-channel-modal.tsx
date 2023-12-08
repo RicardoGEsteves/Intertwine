@@ -1,10 +1,11 @@
-"use client";
-
 import axios from "axios";
-import { z } from "zod";
+import qs from "query-string";
+import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
+import { ChannelType } from "@prisma/client";
+import { useEffect } from "react";
 
 import {
   Dialog,
@@ -24,32 +25,39 @@ import {
 } from "@/components/ui/form";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import FileUpload from "@/components/file-upload";
 import { useModal } from "@/hooks/use-modal-store";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 const formSchema = z.object({
   name: z
     .string()
-    .min(1, {
-      message: "Please enter a server name.",
-    })
-    .max(20),
-  imageUrl: z.string().min(1, {
-    message: "Please enter a server image URL.",
-  }),
+    .min(3)
+    .max(20)
+    .refine((name) => name.toLowerCase() !== "general", {
+      message: "You cannot use the name 'general', it is reserved.",
+    }),
+  type: z.nativeEnum(ChannelType),
 });
 
-const CreateServerModal = () => {
-  const { isOpen, onClose, type } = useModal();
+const CreateChannelModal = () => {
+  const { isOpen, onClose, type, data } = useModal();
   const router = useRouter();
+  const params = useParams();
 
-  const isModalOpen = isOpen && type === "createServer";
+  const isModalOpen = isOpen && type === "createChannel";
+  const { channelType } = data;
 
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
-      imageUrl: "",
+      type: channelType || ChannelType.TEXT,
     },
   });
 
@@ -77,52 +85,29 @@ const CreateServerModal = () => {
       <DialogContent className="bg-secondary text-primary p-0 overflow-hidden">
         <DialogHeader className="pt-8 px-6">
           <DialogTitle className="text-2xl text-center font-bold">
-            Server customization
+            Create Channel
           </DialogTitle>
           <DialogDescription className="text-center text-gray-500 dark:text-gray-400">
-            Customize your server channel effortlessly with our versatile
-            features. Tailor permissions, adjust settings, and personalize the
-            channel to suit your community&apos;s unique needs. From setting
-            specific access controls to defining channel topics, make your space
-            truly your own. Enhance engagement and collaboration by molding the
-            channel environment to match your vision seamlessly.
+            Channels are where your members communicate. They’re best when
+            organized around a topic — #trips, for example.
           </DialogDescription>
         </DialogHeader>
 
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
             <div className="space-y-8 px-6">
-              <div className="flex items-center justify-center text-center">
-                <FormField
-                  control={form.control}
-                  name="imageUrl"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormControl>
-                        <FileUpload
-                          endpoint="serverImage"
-                          value={field.value}
-                          onChange={field.onChange}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                ></FormField>
-              </div>
-
               <FormField
                 control={form.control}
                 name="name"
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel className="uppercase text-xs font-bold text-gray-500 dark:text-secondary-foreground/70">
-                      Server name
+                      Channel Name
                     </FormLabel>
                     <FormControl>
                       <Input
                         {...field}
-                        placeholder="Enter a server name"
+                        placeholder="Enter channel name, e.g. trips"
                         className="bg-gray-300/50 dark:bg-secondary-foreground/50 border-0 focus-visible:ring-0 text-primary focus-visible:ring-offset-0 dark:placeholder:text-secondary-foreground/50"
                         disabled={isLoading}
                       />
@@ -142,4 +127,4 @@ const CreateServerModal = () => {
   );
 };
 
-export default CreateServerModal;
+export default CreateChannelModal;
