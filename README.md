@@ -52,38 +52,40 @@ npm i @prisma/client
 npx prisma studio
 ```
 
+##
+
 #### Setup Supabase
 
-- Create a new project on [Supabase](https://supabase.io/)
-
-- Add your Supabase URL to the .env file
-- Add your Supabase public key to the .env file
+> - Create a new project on [Supabase](https://supabase.io/)
+>
+> - Add your Supabase URL to the .env file
+> - Add your Supabase public key to the .env file
 
 ##
 
 #### Setup Clerk
 
-- Create a new project on [Clerk](https://clerk.dev/)
-- Create a new user pool on [Clerk](https://clerk.dev/)
-- Create a new user on [Clerk](https://clerk.dev/)
-
-- Add your Clerk public key to the .env file
-- Add your Clerk secret key to the .env file
-- Add your Clerk sign in URL to the .env file
-- Add your Clerk sign up URL to the .env file
-- Add your Clerk after sign in URL to the .env file
-- Add your Clerk after sign up URL to the .env file
+> - Create a new project on [Clerk](https://clerk.dev/)
+> - Create a new user pool on [Clerk](https://clerk.dev/)
+> - Create a new user on [Clerk](https://clerk.dev/)
+>
+> - Add your Clerk public key to the .env file
+> - Add your Clerk secret key to the .env file
+> - Add your Clerk sign in URL to the .env file
+> - Add your Clerk sign up URL to the .env file
+> - Add your Clerk after sign in URL to the .env file
+> - Add your Clerk after sign up URL to the .env file
 
 ##
 
 #### Setup Uploadthing
 
-Create a new project on [Uploadthing](https://uploadthingy.com/)
-Create a new app on [Uploadthing](https://uploadthingy.com/)
-Create a new secret on [Uploadthing](https://uploadthingy.com/)
-
-- Add your Uploadthing secret to the .env file
-- Add your Uploadthing app id to the .env file
+> Create a new project on [Uploadthing](https://uploadthingy.com/)
+> Create a new app on [Uploadthing](https://uploadthingy.com/)
+> Create a new secret on [Uploadthing](https://uploadthingy.com/)
+>
+> - Add your Uploadthing secret to the .env file
+> - Add your Uploadthing app id to the .env file
 
 ##
 
