@@ -80,9 +80,9 @@ npx prisma studio
 
 #### Setup Uploadthing
 
-> Create a new project on [Uploadthing](https://uploadthingy.com/)
-> Create a new app on [Uploadthing](https://uploadthingy.com/)
-> Create a new secret on [Uploadthing](https://uploadthingy.com/)
+> - Create a new project on [Uploadthing](https://uploadthingy.com/)
+> - Create a new app on [Uploadthing](https://uploadthingy.com/)
+> - Create a new secret on [Uploadthing](https://uploadthingy.com/)
 >
 > - Add your Uploadthing secret to the .env file
 > - Add your Uploadthing app id to the .env file
