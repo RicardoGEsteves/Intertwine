@@ -37,7 +37,7 @@ const ServerHeader = ({ server, role }: ServerHeaderProps) => {
         <Button
           variant="outline"
           size="icon"
-          className="w-full text-md font-semibold px-3 flex items-center h-12 rounded-none border-0"
+          className="w-full text-md font-semibold px-3 flex items-center h-12 rounded-none border-x-0 border-b-2 bg-secondary-foreground/1 dark:bg-primary-foreground hover:bg-secondary-foreground/5 dark:hover:bg-secondary transition focus-visible:ring-0 focus-visible:ring-offset-0 "
         >
           {server.name}
           <ChevronDown className="h-5 w-5 ml-auto" />
