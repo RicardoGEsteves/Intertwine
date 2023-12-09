@@ -1,3 +1,5 @@
+"use client";
+
 import axios from "axios";
 import qs from "query-string";
 import * as z from "zod";
@@ -61,11 +63,26 @@ const CreateChannelModal = () => {
     },
   });
 
+  useEffect(() => {
+    if (channelType) {
+      form.setValue("type", channelType);
+    } else {
+      form.setValue("type", ChannelType.TEXT);
+    }
+  }, [channelType, form]);
+
   const isLoading = form.formState.isSubmitting;
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      await axios.post("/api/servers", values);
+      const url = qs.stringifyUrl({
+        url: "/api/channels",
+        query: {
+          serverId: params?.serverId,
+        },
+      });
+
+      await axios.post(url, values);
 
       form.reset();
       router.refresh();
@@ -88,7 +105,7 @@ const CreateChannelModal = () => {
             Create Channel
           </DialogTitle>
           <DialogDescription className="text-center text-gray-500 dark:text-gray-400">
-            Channels are where your members communicate. They’re best when
+            Channels are where your members communicate. They&apos;re best when
             organized around a topic — #trips, for example.
           </DialogDescription>
         </DialogHeader>
@@ -116,8 +133,43 @@ const CreateChannelModal = () => {
                   </FormItem>
                 )}
               />
+              <FormField
+                control={form.control}
+                name="type"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="uppercase text-xs font-bold text-gray-500 dark:text-secondary-foreground/70">
+                      Channel Type
+                    </FormLabel>
+
+                    <Select
+                      disabled={isLoading}
+                      onValueChange={field.onChange}
+                      defaultValue={field.value}
+                    >
+                      <FormControl>
+                        <SelectTrigger className="bg-gray-300/50 dark:bg-secondary-foreground/50 border-0 focus:ring-0 text-primary ring-offset-0 focus:ring-offset-0 capitalize outline-none">
+                          <SelectValue placeholder="Select a channel type" />
+                        </SelectTrigger>
+                      </FormControl>
+                      <SelectContent>
+                        {Object.values(ChannelType).map((type) => (
+                          <SelectItem
+                            key={type}
+                            value={type}
+                            className="capitalize"
+                          >
+                            {type.toLowerCase()}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
             </div>
-            <DialogFooter className="bg-gray-100 dark:bg-primary-foreground/30 px-6 py-4">
+            <DialogFooter className="bg-primary-foreground/30 px-6 py-4">
               <Button disabled={isLoading}>Create</Button>
             </DialogFooter>
           </form>
