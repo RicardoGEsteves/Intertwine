@@ -15,7 +15,7 @@ const NavigationAction = () => {
           onClick={() => onOpen("createServer")}
           variant="outline"
           size="icon"
-          className="flex mx-3 rounded-full overflow-hidden"
+          className="flex mx-3 rounded-full overflow-hidden hover:bg-gray-400/20 dark:hover:bg-secondary"
         >
           <Plus className="h-5 w-5" size={25} />
         </Button>

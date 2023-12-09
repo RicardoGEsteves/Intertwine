@@ -27,12 +27,12 @@ const NavigationItem = ({ id, imageUrl, name }: NavigationItemProps) => {
         <Button
           variant="outline"
           size="icon"
-          className=" rounded-full ml-4 overflow-hidden"
+          className=" rounded-full ml-4 overflow-hidden hover:bg-gray-400/25 dark:hover:bg-secondary transition"
           onClick={handleClick}
         >
           <div
             className={cn(
-              "absolute left-0 bg-primary rounded-r-full transition-all w-[4px]",
+              "absolute left-0 bg-primary rounded-r-full transition-all w-[2px]",
               params?.serverId !== id && "group-hover:h-[20px]",
               params?.serverId === id ? "h-[36px]" : "h-[8px]"
             )}
@@ -41,7 +41,7 @@ const NavigationItem = ({ id, imageUrl, name }: NavigationItemProps) => {
             className={cn(
               "relative group flex my-2  h-full w-full rounded-[24px] group-hover:rounded-[16px] transition-all overflow-hidden",
               params?.serverId === id &&
-                "bg-primary/5 text-primary rounded-[16px]"
+                "bg-primary/10 text-primary rounded-[16px]"
             )}
           >
             <Image fill src={imageUrl} alt="Server Image" />

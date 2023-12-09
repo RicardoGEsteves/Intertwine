@@ -9,6 +9,9 @@ import { db } from "@/lib/db";
 
 import ServerHeader from "./server-header";
 import ServerSearch from "./server-search";
+import ServerSection from "./server-section";
+import ServerChannel from "./server-channel";
+import ServerMember from "./server-member";
 interface ServerSidebarProps {
   serverId: string;
 }
@@ -123,9 +126,9 @@ const ServerSidebar = async ({ serverId }: ServerSidebarProps) => {
             ]}
           />
         </div>
-        {/* TODO: change bg color */}
+
         <Separator className="bg-gray-200 dark:bg-secondary rounded-md my-2" />
-        {/* {!!textChannels?.length && (
+        {!!textChannels?.length && (
           <div className="mb-2">
             <ServerSection
               sectionType="channels"
@@ -199,7 +202,7 @@ const ServerSidebar = async ({ serverId }: ServerSidebarProps) => {
               ))}
             </div>
           </div>
-        )} */}
+        )}
       </ScrollArea>
     </div>
   );
