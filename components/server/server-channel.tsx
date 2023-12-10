@@ -45,7 +45,8 @@ export const ServerChannel = ({
       onClick={onClick}
       className={cn(
         "group px-2 py-2 rounded-md flex items-center gap-x-2 w-full hover:bg-secondary-foreground/5 dark:hover:bg-secondary transition mb-1",
-        params?.channelId === channel.id && "bg-gray-700/20 dark:bg-gray-700"
+        params?.channelId === channel.id &&
+          "bg-gray-700/10 dark:bg-secondary/50"
       )}
     >
       <Icon className="flex-shrink-0 w-5 h-5 text-gray-400" />
