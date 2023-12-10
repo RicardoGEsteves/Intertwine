@@ -13,7 +13,6 @@ interface ChatHeaderProps {
   imageUrl?: string;
 }
 
-//TODO: change colors
 const ChatHeader = ({ serverId, name, type, imageUrl }: ChatHeaderProps) => {
   return (
     <div className="text-md font-semibold px-3 flex items-center h-12 border-gray-300/40 dark:border-secondary border-b-2">
