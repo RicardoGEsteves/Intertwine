@@ -110,7 +110,7 @@ const InitialModal = () => {
                       <FormMessage />
                     </FormItem>
                   )}
-                ></FormField>
+                />
               </div>
 
               <FormField

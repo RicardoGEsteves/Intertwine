@@ -1,6 +1,7 @@
 "use client";
 
 import axios from "axios";
+import qs from "query-string";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -19,73 +20,69 @@ import {
   FormControl,
   FormField,
   FormItem,
-  FormLabel,
   FormMessage,
 } from "@/components/ui/form";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import FileUpload from "@/components/file-upload";
 import { useModal } from "@/hooks/use-modal-store";
 
 const formSchema = z.object({
-  name: z
-    .string()
-    .min(1, {
-      message: "Please enter a server name.",
-    })
-    .max(20),
-  imageUrl: z.string().min(1, {
-    message: "Please enter a server image URL.",
+  fileUrl: z.string().min(1, {
+    message: "Attachment is required.",
   }),
 });
 
-const CreateServerModal = () => {
-  const { isOpen, onClose, type } = useModal();
+const MessageFileModal = () => {
+  const { isOpen, onClose, type, data } = useModal();
   const router = useRouter();
 
-  const isModalOpen = isOpen && type === "createServer";
+  const isModalOpen = isOpen && type === "messageFile";
+  const { apiUrl, query } = data;
 
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      name: "",
-      imageUrl: "",
+      fileUrl: "",
     },
   });
+
+  const handleClose = () => {
+    form.reset();
+    onClose();
+  };
 
   const isLoading = form.formState.isSubmitting;
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      await axios.post("/api/servers", values);
+      const url = qs.stringifyUrl({
+        url: apiUrl || "",
+        query,
+      });
+
+      await axios.post(url, {
+        ...values,
+        content: values.fileUrl,
+      });
 
       form.reset();
       router.refresh();
-      onClose();
+      handleClose();
     } catch (error) {
       console.log(error);
     }
   };
 
-  const handleModalClose = () => {
-    onClose();
-    form.reset();
-  };
-
   return (
-    <Dialog open={isModalOpen} onOpenChange={handleModalClose}>
+    <Dialog open={isModalOpen} onOpenChange={handleClose}>
       <DialogContent className="bg-secondary text-primary p-0 overflow-hidden">
         <DialogHeader className="pt-8 px-6">
           <DialogTitle className="text-2xl text-center font-bold">
-            Server customization
+            Upload a file
           </DialogTitle>
           <DialogDescription className="text-center text-gray-500 dark:text-gray-400">
-            Customize your server channel effortlessly with our versatile
-            features. Tailor permissions, adjust settings, and personalize the
-            channel to suit your community&apos;s unique needs. From setting
-            specific access controls to defining channel topics, make your space
-            truly your own. Enhance engagement and collaboration by molding the
-            channel environment to match your vision seamlessly.
+            Upload a file to share with your friends. You can upload images,
+            PDFs and more.
           </DialogDescription>
         </DialogHeader>
 
@@ -95,12 +92,12 @@ const CreateServerModal = () => {
               <div className="flex items-center justify-center text-center">
                 <FormField
                   control={form.control}
-                  name="imageUrl"
+                  name="fileUrl"
                   render={({ field }) => (
                     <FormItem>
                       <FormControl>
                         <FileUpload
-                          endpoint="serverImage"
+                          endpoint="messageFile"
                           value={field.value}
                           onChange={field.onChange}
                         />
@@ -110,30 +107,9 @@ const CreateServerModal = () => {
                   )}
                 />
               </div>
-
-              <FormField
-                control={form.control}
-                name="name"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel className="uppercase text-xs font-bold text-gray-500 dark:text-secondary-foreground/70">
-                      Server name
-                    </FormLabel>
-                    <FormControl>
-                      <Input
-                        {...field}
-                        placeholder="Enter a server name"
-                        className="bg-gray-300/50 dark:bg-secondary-foreground/50 border-0 focus-visible:ring-0 text-primary focus-visible:ring-offset-0 dark:placeholder:text-secondary-foreground/50"
-                        disabled={isLoading}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
             </div>
             <DialogFooter className="bg-gray-100 dark:bg-primary-foreground/30 px-6 py-4">
-              <Button disabled={isLoading}>Create</Button>
+              <Button disabled={isLoading}>Send</Button>
             </DialogFooter>
           </form>
         </Form>
@@ -142,4 +118,4 @@ const CreateServerModal = () => {
   );
 };
 
-export default CreateServerModal;
+export default MessageFileModal;
