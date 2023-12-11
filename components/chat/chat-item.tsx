@@ -177,7 +177,6 @@ const ChatItem = ({
             </div>
           )}
           {!fileUrl && !isEditing && (
-            // TODO: check colors and styles
             <p
               className={cn(
                 "text-sm text-primary",
