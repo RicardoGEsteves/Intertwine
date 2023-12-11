@@ -65,10 +65,11 @@ const ChatInput = ({ apiUrl, query, name, type }: ChatInputProps) => {
               <FormControl>
                 <div className="relative p-4 pb-6">
                   <Button
+                    type="button"
                     variant="outline"
                     size="icon"
                     onClick={() => onOpen("messageFile", { apiUrl, query })}
-                    className="absolute top-7 left-8 h-[24px] w-[24px] transition rounded-full p-1"
+                    className="absolute top-7 left-8 h-[24px] w-[24px] transition rounded-full p-1 hover:bg-gray-400/30 dark:hover:bg-secondary"
                   >
                     <Plus className="text-primary" />
                   </Button>
