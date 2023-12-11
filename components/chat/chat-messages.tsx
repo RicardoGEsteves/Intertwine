@@ -94,10 +94,9 @@ const ChatMessages = ({
           {isFetchingNextPage ? (
             <Loader2 className="h-6 w-6 text-primary animate-spin my-4" />
           ) : (
-            // TODO: check colors and styles
             <button
               onClick={() => fetchNextPage()}
-              className="text-zinc-500 hover:text-zinc-600 dark:text-zinc-400 text-xs my-4 dark:hover:text-zinc-300 transition"
+              className="text-gray-400 hover:text-primary dark:text-gray-600 dark:hover:text-primary text-xs my-4 transition"
             >
               Load previous messages
             </button>
