@@ -178,7 +178,7 @@ const MembersModal = () => {
                   </div>
                 )}
               {loadingId === member.id && (
-                <Loader2 className="animate-spin text-primary/50 w-4 h-4" />
+                <Loader2 className="animate-spin text-primary w-4 h-4" />
               )}
             </div>
           ))}
