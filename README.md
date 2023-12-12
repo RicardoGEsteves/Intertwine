@@ -2,6 +2,66 @@
 
 `This is an instant messaging and VoIP social platform which allows communication through voice calls, video calls, text messaging, and media and files. Communication can be private or take place in virtual communities called "servers".`
 
+## Themes and Features
+
+### Demo Images
+
+#### Themes
+
+> - Dark Mode
+>   <img src="/public/demo-images/textChannels.png"/>
+>
+> - Light Mode
+>   <img src="/public/demo-images/lightMode.png"/>
+
+#### Features
+
+> - Video Channels
+>   <img src="/public/demo-images/videoChannels.png"/>
+> - Voice Channels
+>   <img src="/public/demo-images/voiceChannels.png"/>
+> - Text Channels
+>   <img src="/public/demo-images/textChannels.png"/>
+>
+> - Video Calls/Screen Sharing/Chat/Conference
+>   <img src="/public/demo-images/videoConference.png"/>
+>
+> - Shortcut Keys for server navigation
+>   <img src="/public/demo-images/shortcutSearch.png"/>
+>
+> - Upload and share files
+>   <img src="/public/demo-images/uploadFiles.png"/>
+>
+> - Customization and other settings
+>   <img src="/public/demo-images/dropdownNav.png"/>
+
+#### Other Features
+
+> - Real-time updates
+> - Authentication
+> - Instant Messaging
+> - Media and Files
+> - Servers
+> - Channels
+> - Roles
+> - Permissions
+> - Emojis
+> - Reactions
+> - Mentions
+> - Search
+> - User Profiles
+> - User Settings
+> - Server Settings
+> - Server Invites
+> - Server Bans
+> - Server Members
+> - Server Roles
+> - Server Channels
+> - Server Emojis
+> - Server Integrations
+> - Server Moderation
+> - Server Verification
+
 ##
 
 ## Tech Stack
@@ -37,6 +97,8 @@ UPLOADTHING_APP_ID=
 LIVEKIT_API_KEY=
 LIVEKIT_API_SECRET=
 NEXT_PUBLIC_LIVEKIT_URL=
+
+NEXT_PUBLIC_SITE_URL=
 ```
 
 ##
