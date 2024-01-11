@@ -32,7 +32,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "cmdk": "^0.2.0",
-    "date-fns": "^3.0.6",
+    "date-fns": "^3.2.0",
     "emoji-mart": "^5.5.2",
     "livekit-client": "^1.15.8",
     "livekit-server-sdk": "^1.2.7",
