@@ -13,7 +13,7 @@
     "@emoji-mart/data": "^1.1.2",
     "@emoji-mart/react": "^1.1.1",
     "@hookform/resolvers": "^3.3.4",
-    "@livekit/components-react": "^1.5.2",
+    "@livekit/components-react": "^1.5.3",
     "@livekit/components-styles": "^1.0.8",
     "@prisma/client": "^5.8.0",
     "@radix-ui/react-avatar": "^1.0.4",
