@@ -34,7 +34,7 @@
     "cmdk": "^0.2.0",
     "date-fns": "^3.2.0",
     "emoji-mart": "^5.5.2",
-    "livekit-client": "^1.15.9",
+    "livekit-client": "^1.15.10",
     "livekit-server-sdk": "^1.2.7",
     "lucide-react": "^0.314.0",
     "next": "^14.1.0",
