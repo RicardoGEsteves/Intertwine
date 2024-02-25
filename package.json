@@ -26,9 +26,9 @@
     "@radix-ui/react-separator": "^1.0.3",
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-tooltip": "^1.0.7",
-    "@tanstack/react-query": "^5.17.19",
-    "@uploadthing/react": "^6.2.0",
-    "axios": "^1.6.5",
+    "@tanstack/react-query": "^5.21.7",
+    "@uploadthing/react": "^6.2.4",
+    "axios": "^1.6.7",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "cmdk": "^0.2.0",
@@ -47,22 +47,22 @@
     "socket.io-client": "^4.7.4",
     "tailwind-merge": "^2.2.1",
     "tailwindcss-animate": "^1.0.7",
-    "uploadthing": "^6.2.0",
+    "uploadthing": "^6.4.1",
     "uuid": "^9.0.1",
     "zod": "^3.22.4",
-    "zustand": "^4.5.0"
+    "zustand": "^4.5.1"
   },
   "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^18.2.48",
-    "@types/react-dom": "^18.2.18",
-    "@types/uuid": "^9.0.7",
-    "autoprefixer": "^10.4.17",
-    "eslint": "^8",
-    "eslint-config-next": "^14.1.0",
-    "postcss": "^8",
-    "prisma": "^5.8.1",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "@types/node": "20.11.20",
+    "@types/react": "18.2.58",
+    "@types/react-dom": "18.2.19",
+    "@types/uuid": "9.0.8",
+    "autoprefixer": "10.4.17",
+    "eslint": "8.57.0",
+    "eslint-config-next": "14.1.0",
+    "postcss": "8.4.35",
+    "prisma": "5.10.2",
+    "tailwindcss": "3.4.1",
+    "typescript": "5.3.3"
   }
 }
