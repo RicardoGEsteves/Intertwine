@@ -31,7 +31,7 @@
     "axios": "^1.6.7",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
-    "cmdk": "^0.2.0",
+    "cmdk": "^1.0.0",
     "date-fns": "^3.3.1",
     "emoji-mart": "^5.5.2",
     "livekit-client": "^2.0.3",
