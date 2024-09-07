@@ -36,7 +36,7 @@
     "emoji-mart": "^5.6.0",
     "livekit-client": "^2.2.0",
     "livekit-server-sdk": "^2.5.0",
-    "lucide-react": "^0.437.0",
+    "lucide-react": "^0.439.0",
     "next": "^14.2.7",
     "next-themes": "^0.3.0",
     "query-string": "^9.1.0",
@@ -53,15 +53,15 @@
     "zustand": "^4.5.4"
   },
   "devDependencies": {
-    "@types/node": "22.5.2",
+    "@types/node": "22.5.4",
     "@types/react": "18.3.5",
     "@types/react-dom": "18.3.0",
     "@types/uuid": "10.0.0",
     "autoprefixer": "10.4.20",
     "eslint": "8.57.0",
-    "eslint-config-next": "14.2.7",
-    "postcss": "8.4.42",
-    "prisma": "5.19.0",
+    "eslint-config-next": "14.2.8",
+    "postcss": "8.4.45",
+    "prisma": "5.19.1",
     "tailwindcss": "3.4.10",
     "typescript": "5.5.4"
   }
